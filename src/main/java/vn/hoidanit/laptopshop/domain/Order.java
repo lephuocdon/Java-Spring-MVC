@@ -83,9 +83,27 @@ public class Order {
         this.status = status;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
     @Override
     public String toString() {
-        return "Order [id=" + id + ", totalPrice=" + totalPrice + "]";
+        return "Order [id=" + id + ", totalPrice=" + totalPrice + ", receiverName=" + receiverName
+                + ", receiverAddress=" + receiverAddress + ", receiverPhone=" + receiverPhone + ", status=" + status
+                + ", user=" + user + ", orderDetails=" + orderDetails + "]";
     }
 
 }

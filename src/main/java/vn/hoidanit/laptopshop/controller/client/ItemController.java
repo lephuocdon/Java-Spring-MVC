@@ -149,7 +149,13 @@ public class ItemController {
     @GetMapping("/products")
     public String getProductPage(Model model,
             @RequestParam("page") Optional<String> pageOptional,
-            @RequestParam("name") Optional<String> nameOptional) {
+            @RequestParam("name") Optional<String> nameOptional,
+            @RequestParam("min-price") Optional<String> minOptional,
+            @RequestParam("max-price") Optional<String> maxOptional,
+            @RequestParam("factory") Optional<String> factoryOptional,
+            @RequestParam("price") Optional<String> priceOptional
+
+    ) {
         int page = 1;
         try {
             if (pageOptional.isPresent()) {
@@ -206,4 +212,5 @@ public class ItemController {
         model.addAttribute("totalPages", prs.getTotalPages());
         return "client/product/show";
     }
+
 }
